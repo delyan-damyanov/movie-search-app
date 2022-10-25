@@ -1,6 +1,7 @@
 # MovieSearch
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+It is a simple movie search App in Angular. It will demonstrate all the core features of Angular like Modules, Components, built-in Angular Directives like *ngIf and *ngFor, built-in Angular Pipes like async and json, Services and Angular Routing.
 
 ## Development server
 
