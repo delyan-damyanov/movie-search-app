@@ -14,4 +14,16 @@ form {
     margin: 0 auto;
     font-size: 1.25rem;
   }
+
+  /* https://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete
+    removing input white background color for Chrome autocomplete
+  */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #303030 inset !important;
+    box-shadow: 0 0 0 30px #303030 inset !important;
+    -webkit-text-fill-color: white;
+  }
 }
