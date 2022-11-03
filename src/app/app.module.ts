@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
 
@@ -16,6 +17,8 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+
     // Material
     BrowserAnimationsModule,
     MatToolbarModule,
