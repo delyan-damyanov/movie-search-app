@@ -1,10 +1,13 @@
+// Modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
+// Components
 import { AppComponent } from './app.component';
-import { MovieSearchComponent } from './movie-search/movie-search.component';
+import { MovieSearchComponent } from './movie-search/component/movie-search.component';
 
 // Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
 
     // Material
     BrowserAnimationsModule,

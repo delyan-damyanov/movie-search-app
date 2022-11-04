@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="getMovies(form.value)">
+<form [formGroup]="movieForm" (ngSubmit)="searchMovie(movieForm.value.query)">
   <mat-form-field appearance="outline" color="accent">
     <mat-label>Search for a movie</mat-label>
     <input matInput formControlName="query" />
@@ -7,7 +7,7 @@
   <button
     mat-raised-button
     color="accent"
-    (keyup.enter)="getMovies(form.value)"
+    (keyup.enter)="searchMovie(movieForm.value.query)"
   >
     Search
   </button>
