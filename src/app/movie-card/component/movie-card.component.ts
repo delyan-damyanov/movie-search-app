@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Movie } from 'src/app/movie-search/movie.model';
+import { Movie } from 'src/app/models/movie.model';
 
 @Component({
   selector: 'app-movie-card',

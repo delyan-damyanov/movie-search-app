@@ -5,7 +5,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 import { MovieService } from '../movie.service';
-import { Movie } from '../movie.model';
+import { Movie } from '../../models/movie.model';
 
 @Component({
   selector: 'app-movie-search',
