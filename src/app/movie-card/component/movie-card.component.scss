@@ -1,0 +1,15 @@
+.movie-card {
+  width: 280px;
+  height: 680px;
+
+  img {
+    width: 280px;
+    height: 420px;
+  }
+
+  mat-card-actions {
+    position: absolute;
+    margin-bottom: 1rem;
+    bottom: 0;
+  }
+}

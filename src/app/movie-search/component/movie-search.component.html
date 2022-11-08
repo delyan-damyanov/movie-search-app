@@ -2,13 +2,15 @@
   <mat-form-field appearance="outline" color="accent">
     <mat-label>Search for a movie</mat-label>
     <input matInput formControlName="query" />
+    <button mat-icon-button matSuffix>
+      <mat-icon matSuffix>search</mat-icon>
+    </button>
   </mat-form-field>
-
-  <button
-    mat-raised-button
-    color="accent"
-    (keyup.enter)="searchMovie(movieForm.value.query)"
-  >
-    Search
-  </button>
 </form>
+
+<div class="card-wrapper">
+  <app-movie-card
+    *ngFor="let movie of movies$ | async"
+    [movie]="movie"
+  ></app-movie-card>
+</div>

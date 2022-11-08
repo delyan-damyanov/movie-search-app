@@ -1,0 +1,14 @@
+<mat-card class="movie-card">
+  <img mat-card-image [src]="movie.Poster" [alt]="movie.Title" />
+  <mat-card-content>
+    <mat-card-title> {{ movie.Title }} </mat-card-title>
+    <mat-card-subtitle>{{ movie.Type | uppercase }}</mat-card-subtitle>
+    <p>
+      {{ movie.Title }} is a {{ movie.Type }} that was released in
+      {{ movie.Year }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>Learn More</button>
+  </mat-card-actions>
+</mat-card>

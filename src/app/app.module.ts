@@ -8,15 +8,18 @@ import { HttpClientModule } from '@angular/common/http';
 // Components
 import { AppComponent } from './app.component';
 import { MovieSearchComponent } from './movie-search/component/movie-search.component';
+import { MovieCardComponent } from './movie-card/component/movie-card.component';
 
 // Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [AppComponent, MovieSearchComponent],
+  declarations: [AppComponent, MovieSearchComponent, MovieCardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -28,6 +31,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatToolbarModule,
     MatInputModule,
     MatButtonModule,
+    MatCardModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
