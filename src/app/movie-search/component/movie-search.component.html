@@ -1,7 +1,7 @@
 <form [formGroup]="movieForm" (ngSubmit)="searchMovie(movieForm.value.query)">
   <mat-form-field appearance="outline" color="accent">
     <mat-label>Search for a movie</mat-label>
-    <input matInput formControlName="query" />
+    <input #movieSearchInput matInput formControlName="query" />
     <button mat-icon-button matSuffix>
       <mat-icon matSuffix>search</mat-icon>
     </button>
