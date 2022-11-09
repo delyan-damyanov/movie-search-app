@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MovieSearchComponent } from './movie-search/component/movie-search.component';
+import { MovieSearchComponent } from './components/movie-search/movie-search.component';
 
 const routes: Routes = [{ path: '', component: MovieSearchComponent }];
 

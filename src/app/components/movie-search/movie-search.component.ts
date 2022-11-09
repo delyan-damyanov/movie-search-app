@@ -10,7 +10,7 @@ import {
   filter,
 } from 'rxjs/operators';
 
-import { MovieService } from '../movie.service';
+import { MovieService } from '../../services/movie.service';
 import { Movie } from '../../models/movie.model';
 
 @Component({

@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 
 import { Movie } from '../models/movie.model';
 import { environment } from 'src/environments/environment';
-import { API_KEY } from './movie.enum';
+import { API_KEY } from '../models/movie.enum';
 
 @Injectable({
   providedIn: 'root',

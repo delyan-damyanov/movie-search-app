@@ -7,8 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Components
 import { AppComponent } from './app.component';
-import { MovieSearchComponent } from './movie-search/component/movie-search.component';
-import { MovieCardComponent } from './movie-card/component/movie-card.component';
+import { MovieSearchComponent } from './components/movie-search/movie-search.component';
+import { MovieCardComponent } from './components/movie-card/movie-card.component';
 
 // Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
