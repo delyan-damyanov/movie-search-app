@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Movie } from '../models/movie.model';
+import { Movie, MovieDetails } from '../models/movie.model';
 import { environment } from 'src/environments/environment';
 import { API_KEY } from '../models/movie.enum';
 
@@ -20,5 +20,11 @@ export class MovieService {
     return this.http
       .get(`${this.baseUrl}/?apikey=${API_KEY.key}&s=${query}`)
       .pipe(map((response: any) => response.Search));
+  }
+
+  getMovieDetails(imdbId: string): Observable<MovieDetails> {
+    return this.http.get<MovieDetails>(
+      `${this.baseUrl}/?apikey=${API_KEY.key}&i=${imdbId}&plot=full`
+    );
   }
 }

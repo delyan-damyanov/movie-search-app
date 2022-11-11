@@ -17,9 +17,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 @NgModule({
-  declarations: [AppComponent, MovieSearchComponent, MovieCardComponent],
+  declarations: [
+    AppComponent,
+    MovieSearchComponent,
+    MovieCardComponent,
+    MovieDetailsComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

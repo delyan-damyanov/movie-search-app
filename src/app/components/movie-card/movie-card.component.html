@@ -9,6 +9,13 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>Learn More</button>
+    <button
+      mat-button
+      routerLink="/movie-details"
+      [queryParams]="{ movie_id: movie.imdbID }"
+    >
+      Learn More
+      {{ movie.imdbID }}
+    </button>
   </mat-card-actions>
 </mat-card>
