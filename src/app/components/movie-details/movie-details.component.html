@@ -1,1 +1,73 @@
-<p>movie-details works!</p>
+<mat-card *ngIf="movieDetails$ | async as movie">
+  <mat-card-title-group>
+    <div class="back-button-wrapper">
+      <mat-card-title>{{ movie.Title }}</mat-card-title>
+      <button mat-fab color="primary" routerLink="/home">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+    </div>
+    <mat-card-subtitle>
+      <!-- TODO: lead to a page with movies from the same year -->
+      <a href="" (click)="$event.preventDefault()">{{ movie.Year }}</a>
+    </mat-card-subtitle>
+    <mat-card-subtitle>
+      <!-- TODO: lead to a page with additional information about the rating system -->
+      <a href="" (click)="$event.preventDefault()">{{ movie.Rated }}</a>
+    </mat-card-subtitle>
+    <mat-card-subtitle>{{ movie.Runtime }}</mat-card-subtitle>
+  </mat-card-title-group>
+
+  <mat-card-content>
+    <div class="content-column">
+      <img [src]="movie.Poster" [alt]="movie.Title" />
+      <div class="genre-badges">
+        <button
+          mat-stroked-button
+          *ngFor="let genre of movie.Genre | splitString: ', '"
+        >
+          {{ genre }}
+        </button>
+      </div>
+    </div>
+    <div class="content-column">
+      <p>{{ movie.Plot }}</p>
+      <ul class="film-crew-list">
+        <li class="film-crew-row">
+          <span>Director</span>
+          <ul>
+            <li *ngFor="let director of movie.Director | splitString: ', '">
+              <!-- TODO: lead to a page with movies from the same director -->
+              <a href="" (click)="$event.preventDefault()">{{ director }}</a>
+            </li>
+          </ul>
+        </li>
+        <hr />
+        <li class="film-crew-row">
+          <span>Writers</span>
+          <ul>
+            <li *ngFor="let writer of movie.Writer | splitString: ', '">
+              <!-- TODO: lead to a page with movies from the same writer -->
+              <a href="" (click)="$event.preventDefault()">{{ writer }}</a>
+            </li>
+          </ul>
+        </li>
+        <hr />
+        <li class="film-crew-row">
+          <span>Stars</span>
+          <ul>
+            <li *ngFor="let actors of movie.Actors | splitString: ', '">
+              <!-- TODO: lead to a page with movies with the same actor -->
+              <a href="" (click)="$event.preventDefault()">{{ actors }}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="ratings-list">
+        <li class="ratings-row" *ngFor="let rating of movie.Ratings">
+          {{ rating.Source }} - <span> {{ rating.Value }}</span>
+        </li>
+      </ul>
+    </div>
+  </mat-card-content>
+</mat-card>
