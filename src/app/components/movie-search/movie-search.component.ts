@@ -2,12 +2,12 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 
-import { Observable, fromEvent } from 'rxjs';
+import { Observable } from 'rxjs';
 import {
   debounceTime,
-  map,
   distinctUntilChanged,
   filter,
+  switchMap,
 } from 'rxjs/operators';
 
 import { MovieService } from '../../services/movie.service';
@@ -31,22 +31,16 @@ export class MovieSearchComponent implements OnInit {
       query: [''],
     });
 
-    fromEvent(this.movieSearchInput.nativeElement, 'keyup')
-      .pipe(
-        // get value
-        map((event: any) => {
-          return event.target.value;
-        }),
-        // Filter out undefined values
-        filter(Boolean),
-        // Time in milliseconds between key events
-        debounceTime(1000),
-        // If previous query is diffent from current
-        distinctUntilChanged()
-      )
-      .subscribe((text: string) => {
-        this.movies$ = this.movieService.getMovie(text);
-      });
+    this.movies$ = this.movieForm.get('query')!.valueChanges.pipe(
+      // Filter out undefined values
+      filter(Boolean),
+      // Time in milliseconds between key events
+      debounceTime(1000),
+      // If previous query is diffent from current
+      distinctUntilChanged(),
+      // Use query to get movies
+      switchMap((query) => this.movieService.getMovie(query))
+    );
   }
 
   searchMovie(query: string) {

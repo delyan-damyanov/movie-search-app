@@ -23,6 +23,5 @@ export class MovieDetailsComponent implements OnInit {
       map((queryParams) => queryParams['movie_id']),
       switchMap((imdbId) => this.movieService.getMovieDetails(imdbId))
     );
-    this.movieDetails$.subscribe((details) => console.log(details));
   }
 }
