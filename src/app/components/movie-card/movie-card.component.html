@@ -1,14 +1,100 @@
 <mat-card class="movie-card">
-  <img mat-card-image [src]="movie.Poster" [alt]="movie.Title" />
+  <!-- poster -->
+  <ngx-skeleton-loader
+    *ngIf="!contentLoaded"
+    animation="pulse"
+    [theme]="{
+      width: '280px',
+      height: '420px',
+      margin: '-1rem 0 0 -1rem',
+      backgroundColor: '#615d5d'
+    }"
+  >
+  </ngx-skeleton-loader>
+
+  <img
+    *ngIf="contentLoaded"
+    mat-card-image
+    [src]="movie.Poster"
+    [alt]="movie.Title"
+  />
+
   <mat-card-content>
-    <mat-card-title> {{ movie.Title }} </mat-card-title>
-    <mat-card-subtitle>{{ movie.Type | uppercase }}</mat-card-subtitle>
-    <p>
+    <!-- title -->
+    <ngx-skeleton-loader
+      *ngIf="!contentLoaded"
+      animation="pulse"
+      [theme]="{
+        width: '100%',
+        margin: '0.5rem 0 0.25rem 0',
+        backgroundColor: '#615d5d'
+      }"
+    ></ngx-skeleton-loader>
+    <ngx-skeleton-loader
+      *ngIf="!contentLoaded"
+      animation="pulse"
+      [theme]="{ width: '70%', backgroundColor: '#615d5d' }"
+    >
+    </ngx-skeleton-loader>
+
+    <mat-card-title *ngIf="contentLoaded"> {{ movie.Title }} </mat-card-title>
+
+    <!-- subtitle -->
+    <mat-card-subtitle *ngIf="contentLoaded">
+      {{ movie.Type | uppercase }}
+    </mat-card-subtitle>
+
+    <!-- summary -->
+    <ngx-skeleton-loader
+      *ngIf="!contentLoaded"
+      animation="pulse"
+      [theme]="{
+        width: '80%',
+        margin: '1rem 0 0.25rem 0',
+        backgroundColor: '#615d5d'
+      }"
+    >
+    </ngx-skeleton-loader>
+    <ngx-skeleton-loader
+      *ngIf="!contentLoaded"
+      animation="pulse"
+      [theme]="{
+        width: '90%',
+        marginBottom: '0.25rem',
+        backgroundColor: '#615d5d'
+      }"
+    >
+    </ngx-skeleton-loader>
+    <ngx-skeleton-loader
+      *ngIf="!contentLoaded"
+      animation="pulse"
+      [theme]="{
+        width: '60%',
+        marginBottom: '0.25rem',
+        backgroundColor: '#615d5d'
+      }"
+    >
+    </ngx-skeleton-loader>
+
+    <p *ngIf="contentLoaded">
       {{ movie.Title }} is a {{ movie.Type }} that was released in
       {{ movie.Year }}
     </p>
   </mat-card-content>
-  <mat-card-actions>
+
+  <!-- learn more button -->
+  <ngx-skeleton-loader
+    *ngIf="!contentLoaded"
+    animation="pulse"
+    [theme]="{
+      width: '30%',
+      marginTop: '1rem',
+      backgroundColor: '#615d5d'
+    }"
+  >
+  </ngx-skeleton-loader>
+
+  <mat-card-actions *ngIf="contentLoaded">
     <button
       mat-button
       routerLink="/movie-details"

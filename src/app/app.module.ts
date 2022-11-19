@@ -22,6 +22,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +45,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
+
+    NgxSkeletonLoaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

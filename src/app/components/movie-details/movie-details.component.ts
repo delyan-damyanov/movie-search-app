@@ -12,6 +12,7 @@ import { MovieService } from 'src/app/services/movie.service';
 })
 export class MovieDetailsComponent implements OnInit {
   movieDetails$!: Observable<MovieDetails>;
+  contentLoaded = false;
 
   constructor(
     private readonly route: ActivatedRoute,
@@ -23,5 +24,10 @@ export class MovieDetailsComponent implements OnInit {
       map((queryParams) => queryParams['movie_id']),
       switchMap((imdbId) => this.movieService.getMovieDetails(imdbId))
     );
+
+    // for css skeleton loading presentation purpose
+    setTimeout(() => {
+      this.contentLoaded = true;
+    }, 2000);
   }
 }
