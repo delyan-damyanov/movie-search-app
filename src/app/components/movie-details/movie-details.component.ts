@@ -12,7 +12,7 @@ import { MovieService } from 'src/app/services/movie.service';
 })
 export class MovieDetailsComponent implements OnInit {
   movieDetails$!: Observable<MovieDetails>;
-  contentLoaded = false;
+  contentLoaded: boolean = false;
 
   constructor(
     private readonly route: ActivatedRoute,

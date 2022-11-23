@@ -1,6 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { Observable } from 'rxjs';
 import {
@@ -21,8 +20,6 @@ import { Movie } from '../../models/movie.model';
 export class MovieSearchComponent implements OnInit {
   movieForm!: FormGroup;
   movies$!: Observable<Movie[]>;
-  @ViewChild('movieSearchInput', { static: true })
-  movieSearchInput!: ElementRef;
 
   constructor(private fb: FormBuilder, private movieService: MovieService) {}
 
@@ -43,7 +40,7 @@ export class MovieSearchComponent implements OnInit {
     );
   }
 
-  searchMovie(query: string) {
+  searchMovie(query: string): void {
     this.movies$ = this.movieService.getMovie(query);
   }
 }

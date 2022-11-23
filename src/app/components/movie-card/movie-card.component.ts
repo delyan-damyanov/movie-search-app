@@ -10,7 +10,7 @@ export class MovieCardComponent implements OnInit {
   @Input()
   movie!: Movie;
 
-  contentLoaded = false;
+  contentLoaded: boolean = false;
 
   ngOnInit() {
     // for css skeleton loading presentation purpose
