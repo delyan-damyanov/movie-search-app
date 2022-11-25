@@ -76,7 +76,7 @@
       <div *ngIf="contentLoaded" class="genre-badges">
         <button
           mat-stroked-button
-          *ngFor="let genre of movie.Genre | splitString: ', '"
+          *ngFor="let genre of movie.Genre | splitString : ', '"
         >
           {{ genre }}
         </button>
@@ -130,7 +130,7 @@
         <li class="film-crew-row">
           <span>Director</span>
           <ul>
-            <li *ngFor="let director of movie.Director | splitString: ', '">
+            <li *ngFor="let director of movie.Director | splitString : ', '">
               <!-- TODO: lead to a page with movies from the same director -->
               <a href="" (click)="$event.preventDefault()">{{ director }}</a>
             </li>
@@ -140,7 +140,7 @@
         <li class="film-crew-row">
           <span>Writers</span>
           <ul>
-            <li *ngFor="let writer of movie.Writer | splitString: ', '">
+            <li *ngFor="let writer of movie.Writer | splitString : ', '">
               <!-- TODO: lead to a page with movies from the same writer -->
               <a href="" (click)="$event.preventDefault()">{{ writer }}</a>
             </li>
@@ -150,7 +150,7 @@
         <li class="film-crew-row">
           <span>Stars</span>
           <ul>
-            <li *ngFor="let actors of movie.Actors | splitString: ', '">
+            <li *ngFor="let actors of movie.Actors | splitString : ', '">
               <!-- TODO: lead to a page with movies with the same actor -->
               <a href="" (click)="$event.preventDefault()">{{ actors }}</a>
             </li>
