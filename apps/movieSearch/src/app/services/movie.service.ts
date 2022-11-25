@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { Movie, MovieDetails } from '../models/movie.model';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 import { API_KEY } from '../models/movie.enum';
 
 @Injectable({
