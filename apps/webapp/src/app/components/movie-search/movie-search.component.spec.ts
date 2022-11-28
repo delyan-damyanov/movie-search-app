@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MovieService } from '../../services/movie.service';
 
 import { MovieSearchComponent } from './movie-search.component';
-import { MovieService } from 'src/app/services/movie.service';
 
 describe('MovieCardComponent', () => {
   let component: MovieSearchComponent;
