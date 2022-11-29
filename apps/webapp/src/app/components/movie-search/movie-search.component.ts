@@ -10,7 +10,7 @@ import {
 } from 'rxjs/operators';
 
 import { MovieService } from '../../services/movie.service';
-import { Movie } from '../../models/movie.model';
+import { Movie } from '../../../../../../libs/types/src';
 
 @Component({
   selector: 'app-movie-search',

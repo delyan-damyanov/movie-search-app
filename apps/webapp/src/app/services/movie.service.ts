@@ -2,29 +2,20 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
-import { Movie, MovieDetails } from '../models/movie.model';
-import { environment } from '../../environments/environment';
-import { API_KEY } from '../models/movie.enum';
+import { Movie, MovieDetails } from '../../../../../libs/types/src';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MovieService {
-  baseUrl = environment.baseUrl;
-
   constructor(private http: HttpClient) {}
 
   getMovie(query: string): Observable<Movie[]> {
-    return this.http
-      .get(`${this.baseUrl}/?apikey=${API_KEY.key}&s=${query}`)
-      .pipe(map((response: any) => response.Search));
+    return this.http.get<Movie[]>(`/api/movie?title=${query}`);
   }
 
   getMovieDetails(imdbId: string): Observable<MovieDetails> {
-    return this.http.get<MovieDetails>(
-      `${this.baseUrl}/?apikey=${API_KEY.key}&i=${imdbId}&plot=full`
-    );
+    return this.http.get<MovieDetails>(`/api/movie-details/${imdbId}`);
   }
 }
