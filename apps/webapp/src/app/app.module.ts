@@ -12,7 +12,7 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 // Pipes
-import { SplitStringPipe } from './utils/split-string.pipe';
+import { SplitStringPipe } from './pipes/split-string.pipe';
 
 // Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
