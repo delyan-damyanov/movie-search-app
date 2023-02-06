@@ -36,11 +36,11 @@ export class MovieSearchComponent implements OnInit {
       // If previous query is diffent from current
       distinctUntilChanged(),
       // Use query to get movies
-      switchMap((query) => this.movieService.getMovie(query))
+      switchMap((query) => this.movieService.findAll(query))
     );
   }
 
-  searchMovie(query: string): void {
-    this.movies$ = this.movieService.getMovie(query);
+  getMovie(query: string): void {
+    this.movies$ = this.movieService.findAll(query);
   }
 }

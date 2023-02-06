@@ -20,8 +20,8 @@ export class MovieDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.movieDetails$ = this.route.queryParams.pipe(
-      map((queryParams) => queryParams['movie_id']),
-      switchMap((imdbId) => this.movieService.getMovieDetails(imdbId))
+      map((queryParams) => queryParams['imdbID']),
+      switchMap((imdbID) => this.movieService.findById(imdbID))
     );
 
     // for css skeleton loading presentation purpose

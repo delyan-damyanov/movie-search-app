@@ -27,13 +27,13 @@ describe('AppComponent', () => {
   it('should have a title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('MoFind');
+    expect(app.title).toEqual('Filmhunt');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled: HTMLElement = fixture.nativeElement;
-    expect(compiled.querySelector('span')?.textContent).toContain('MoFind');
+    expect(compiled.querySelector('span')?.textContent).toContain('Filmhunt');
   });
 });

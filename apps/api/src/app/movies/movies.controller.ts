@@ -2,20 +2,22 @@ import { Controller, Get, Param, Query } from '@nestjs/common';
 
 import { Observable } from 'rxjs';
 
-import { Movie, MovieDetails } from 'types';
-import { MoviesService } from './movies.service';
+import { MovieService } from './movies.service';
+import { Movie } from './schemas/movie.schema';
 
 @Controller()
 export class MoviesController {
-  constructor(private readonly moviesService: MoviesService) {}
+  constructor(private readonly movieService: MovieService) {}
 
   @Get('movie')
-  getMovie(@Query('title') title: string): Observable<Movie[]> {
-    return this.moviesService.getMovie(title);
+  async getMovie(
+    @Query('title') title: string
+  ): Promise<Movie[] | Observable<Movie[]>> {
+    return await this.movieService.findAll(title);
   }
 
-  @Get('movie-details/:imdbId')
-  getMovieDetails(@Param('imdbId') imdbId: string): Observable<MovieDetails> {
-    return this.moviesService.getMovieDetails(imdbId);
+  @Get('movie-details/:imdbID')
+  async getMovieDetails(@Param('imdbID') imdbID: string) {
+    return await this.movieService.findById(imdbID);
   }
 }
