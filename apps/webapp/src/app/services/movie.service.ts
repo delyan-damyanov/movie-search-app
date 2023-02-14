@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { Movie, MovieDetails } from '../../../../../libs/types/src';
 
@@ -16,6 +16,6 @@ export class MovieService {
   }
 
   findById(imdbID: string): Observable<MovieDetails> {
-    return this.http.get<MovieDetails>(`/api/movie-details/${imdbID}`);
+    return this.http.get<MovieDetails>(`/api/details/${imdbID}`);
   }
 }

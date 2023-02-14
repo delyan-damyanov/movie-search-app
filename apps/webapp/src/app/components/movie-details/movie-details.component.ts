@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
 import { map, Observable, switchMap } from 'rxjs';
+
 import { MovieDetails } from '../../../../../../libs/types/src';
 import { MovieService } from '../../services/movie.service';
 
@@ -15,12 +18,13 @@ export class MovieDetailsComponent implements OnInit {
 
   constructor(
     private readonly route: ActivatedRoute,
-    private readonly movieService: MovieService
+    private readonly movieService: MovieService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
-    this.movieDetails$ = this.route.queryParams.pipe(
-      map((queryParams) => queryParams['imdbID']),
+    this.movieDetails$ = this.route.paramMap.pipe(
+      map((paramMap) => paramMap.get('id') as string),
       switchMap((imdbID) => this.movieService.findById(imdbID))
     );
 
@@ -28,5 +32,9 @@ export class MovieDetailsComponent implements OnInit {
     setTimeout(() => {
       this.contentLoaded = true;
     }, 2000);
+  }
+
+  back(): void {
+    this.location.back();
   }
 }

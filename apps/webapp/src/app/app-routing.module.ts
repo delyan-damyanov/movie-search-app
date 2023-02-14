@@ -4,10 +4,13 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 import { MovieSearchComponent } from './components/movie-search/movie-search.component';
 
 const routes: Routes = [
-  { path: 'home', component: MovieSearchComponent },
-  { path: 'movie-details', component: MovieDetailsComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', component: MovieSearchComponent },
+  { path: 'search', component: MovieSearchComponent },
+  {
+    path: 'details/:id',
+    component: MovieDetailsComponent,
+  },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({

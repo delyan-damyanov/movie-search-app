@@ -95,11 +95,7 @@
   </ngx-skeleton-loader>
 
   <mat-card-actions *ngIf="contentLoaded">
-    <button
-      mat-button
-      routerLink="/movie-details"
-      [queryParams]="{ imdbID: movie.imdbID }"
-    >
+    <button mat-button routerLink="/details/{{ movie.imdbID }}">
       Learn More
     </button>
   </mat-card-actions>

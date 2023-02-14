@@ -16,7 +16,7 @@ export class MoviesController {
     return await this.movieService.findAll(title);
   }
 
-  @Get('movie-details/:imdbID')
+  @Get('details/:imdbID')
   async getMovieDetails(@Param('imdbID') imdbID: string) {
     return await this.movieService.findById(imdbID);
   }

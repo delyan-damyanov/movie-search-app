@@ -13,7 +13,8 @@
     </ngx-skeleton-loader>
     <div *ngIf="contentLoaded" class="header-title-wrapper">
       <mat-card-title>{{ movie.Title }}</mat-card-title>
-      <button mat-fab color="primary" routerLink="/home">
+      <!-- <button mat-fab color="primary" routerLink="/search"> -->
+      <button mat-fab color="primary" (click)="back()">
         <mat-icon>arrow_back</mat-icon>
       </button>
     </div>
